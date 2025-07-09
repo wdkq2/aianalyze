@@ -4,7 +4,8 @@ This repository contains a Colab notebook `boan_data_pipeline.ipynb` that downlo
 
 ## Colab Workflow
 
-1. **Create an environment file** on Google Drive named `aianalyze.env` with the following variables:
+1. **Create an environment file** on Google Drive named `aianalyze.env` inside the `boan_data` folder with the following variables (path `/content/drive/MyDrive/boan_data/aianalyze.env`):
+
    ```
    SERVICE_KEY=YOUR_URL_ENCODED_SERVICE_KEY
    START_DATE=2020-01-01
@@ -15,18 +16,13 @@ This repository contains a Colab notebook `boan_data_pipeline.ipynb` that downlo
    ```
    Adjust the values as needed.
 
-2. **Mount Drive and clone the repo**:
-   ```python
-   from google.colab import drive
-   drive.mount('/content/drive')
-   %cd /content/drive/MyDrive
-   !git clone https://github.com/your-username/aianalyze.git
-   %cd aianalyze
-   ```
+2. **Open the notebook in Colab** using this link:
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/aianalyze/blob/main/boan_data_pipeline.ipynb)
 
-3. **Install dependencies**:
+3. **Run the setup cell** (mounts Drive and installs dependencies):
+
    ```python
    !pip install -q -r requirements.txt
    ```
+4. **Execute the remaining cells** to download and index the press releases.
 
-4. **Run the notebook** by opening `boan_data_pipeline.ipynb`, executing the first cell to load the `.env` file, then run the remaining cells.
